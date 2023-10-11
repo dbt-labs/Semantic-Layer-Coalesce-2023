@@ -4,17 +4,7 @@ semantic_models:
       agg_time_dimension: ordered_at
     description: |
       Order fact table. This table is at the order grain with one row per order.
-    model: ref('fct_orders')
-    entities:
-      - name: order_id
-        type: primary
-      - name: location
-        type: foreign
-        expr: location_id
-      - name: customer
-        type: foreign
-        expr: customer_id
-    dimensions:
+s:
       - name: ordered_at
         expr: date_trunc('day', ordered_at)
         type: time
