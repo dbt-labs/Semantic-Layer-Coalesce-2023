@@ -39,4 +39,3 @@ semantic_models:
         agg: sum
         expr: case when is_drink_item = 1 then product_price else 0 end
 
-
