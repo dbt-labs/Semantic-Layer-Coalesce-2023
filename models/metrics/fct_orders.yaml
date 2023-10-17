@@ -22,8 +22,10 @@ semantic_models:
           time_granularity: day
       - name: order_total_dim
         type: categorical
-        expr: order_total
+        expr: order_totals
       - name: is_food_order
+        type: categorical
+      - name: is_drink_order
         type: categorical
 
     measures:
@@ -138,6 +140,12 @@ metrics:
     type: simple
     type_params:
       measure: order_cost
+  - name: "order_count"
+    description: "Count of orders"
+    type: simple
+    label: "order_count"
+    type_params:
+      measure: order_count
 
 #Ratio type metric
   - name: "food_order_pct"
