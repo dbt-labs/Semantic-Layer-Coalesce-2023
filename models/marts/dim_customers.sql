@@ -30,9 +30,9 @@ order_summary as (
         sum(orders.order_total) as lifetime_spend
 
     from orders
-    
+
     left join order_items on orders.order_id = order_items.order_id
-    
+
     group by 1
 
 ),
