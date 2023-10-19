@@ -25,6 +25,8 @@ semantic_models:
         expr: order_total
       - name: is_food_order
         type: categorical
+      - name: is_drink_order
+        type: categorical
 
     measures:
       - name: order_total
@@ -138,6 +140,12 @@ metrics:
     type: simple
     type_params:
       measure: order_cost
+  - name: "order_count"
+    label: "order_count"
+    description: the number if orders placed
+    type: simple
+    type_parms:
+        measures: order_count
 
 #Ratio type metric
   - name: "food_order_pct"
@@ -173,6 +181,18 @@ metrics:
           alias: cost
           filter: |
             {{Dimension('product__is_food_order')}} = True
+  - name: "order_gross_profit"
+    label: "order_gross_profit"    
+    description: "Gross profit from each order"
+    type: derived
+    type_params:
+      expr: revenue - cost
+      metrics:
+        - name: order_total
+          alias: revenue
+        - name: order_amount
+          alias: cost
+ 
  #CUMULATIVE METRICS 
   - name: "cumulative_order_amount"
     label: "cumulative_order_amount"    
