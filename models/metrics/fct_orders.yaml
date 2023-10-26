@@ -132,8 +132,8 @@ metrics:
       measure: customers_with_orders
     filter: |
       {{ Dimension('customer__customer_type') }}  = 'new'
-  - name: "order_amount"
-    label: "order_amount"    
+  - name: "order_cost"
+    label: "order_cost"
     description: The cost of fulfilling each order
     type: simple
     type_params:
@@ -169,7 +169,7 @@ metrics:
           alias: revenue
           filter: |
             {{Dimension('product__is_food_order')}} = True
-        - name: order_amount
+        - name: order_cost
           alias: cost
           filter: |
             {{Dimension('product__is_food_order')}} = True
