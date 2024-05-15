@@ -1,4 +1,4 @@
-dbt-duckdb~=1.5.0
+dbt-duckdb~=1.6
 duckcli~=0.2.1
 jafgen~=0.3.1
 pre-commit~=3.0.4
