@@ -168,11 +168,11 @@ metrics:
         - name: order_total
           alias: revenue
           filter: |
-            {{Dimension('product__is_food_order')}} = True
+            {{Dimension('order_id__is_food_order')}} = True
         - name: order_amount
           alias: cost
           filter: |
-            {{Dimension('product__is_food_order')}} = True
+            {{Dimension('order_id__is_food_order')}} = True
  #CUMULATIVE METRICS 
   - name: "cumulative_order_amount"
     label: "cumulative_order_amount"    
